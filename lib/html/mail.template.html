@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <style>
+      table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .rowHeader {
+        background-color: #e3efe4;
+        font-size: 24;
+      }
+
+      .subHeader {
+        font-size: 20;
+        background-color: #E6E6E6;
+      }
+
+      .passed {
+        color: #047c02;
+      }
+
+      .failed {
+        color: #a01503;
+      }
+
+      .runnerName {
+        color: blue;
+      }
+
+      .error{
+        color: #f72d2d
+      }
+    </style>
+  </head>
+  <!-- example -->
+  <body>
+    <table>
+      <tr class="rowHeader">
+        <td colspan=2>Results</td>
+      </tr>
+      {{ #results }}
+      <tr>
+        <td colspan=2 class=runnerName>{{ runnerName }}</td>
+      </tr>
+      <tr>
+        <td>Full Title: </td>
+        <td colspan=2 class=failed>{{ fullTitle }}</td>
+      </tr>
+      <tr>
+        <td>Error:</td>
+        <td colspan=2 class=error>{{ error }}</td>
+      </tr>
+      <tr>
+        <td>URL:</td>
+        <td colspan=2>{{ url }}</td>
+      </tr>
+      <tr>
+        <td>Run ID: </td>
+        <td colspan=2>{{ runId }}</td>
+      </tr>
+      <tr>
+        <td>Test ID: </td>
+        <td colspan=2>{{ testId }}</td>
+      </tr>
+      {{/results}}
+    </table>
+  </body>
+</html>
