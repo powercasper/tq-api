@@ -36,6 +36,10 @@
     "mocha": "^3.2.0",
     "nock": "^9.0.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdiachenko/tq.git"
+  },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha --ui tdd",
     "start": "node server.js",
