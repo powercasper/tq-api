@@ -26,6 +26,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/status', require('./routes/status'));
 
+app.use('/users', function (req, res) {
+  res.json([{
+  	id: 1,
+  	username: "Barak Obama"
+  }, {
+  	id: 2,
+  	username: "Donald Trump"
+  }]);
+});
 /**
  * @example curl 'http://localhost:4040/home'
  */
@@ -74,6 +83,24 @@ app.use('/run_all_tests', function(req, res) {
     }
     res.status(200).send(resp);
   }, 1000);
+});
+
+
+app.use('/interval', function (req, res) {
+  var runId = uuidV4();
+  setTimeout(function() {
+    var resp = {
+      data: {
+        run_id: runId
+      },
+      message: "Successfully connected to tq-api/interval"
+    }
+    res.status(200).send(resp);
+  }, 1000);
+});
+
+app.post('/post', function (req, res) {
+  res.send('POST request to homepage');
 });
 
 
